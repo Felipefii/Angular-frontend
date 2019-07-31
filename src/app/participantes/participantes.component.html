@@ -1,0 +1,30 @@
+
+<div class="ui-g">
+    <div class="ui-g-12">
+        <h2>Lista de Participantes</h2>
+            <p-table [value]="part">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Data de inscrição</th>
+                            <th>Situação</th>
+                            <th>Número da Conta</th>
+                            <th>Opções</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-part>
+                        <tr>
+                            <td>{{part.nome}}</td>
+                            <td>{{part.conta.dataInscricao}}</td>
+                            <td>{{part.conta.situacao}}</td>
+                            <td>{{part.conta.id}}</td>
+                            <td>
+                                <a routerLink="/sacar">Sacar /</a>
+                                <a routerLink="/contribuir"> Contribuir / </a>
+                                <a routerLink="/saldo" > Saldo</a>
+                            </td>
+                        </tr>
+                    </ng-template>
+            </p-table>          
+    </div>
+</div>
